@@ -1,0 +1,11 @@
+on:
+  push:
+name: action-codespell
+jobs:
+  codespell:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Codespell with annotations
+        uses: codespell-project/actions-codespell@v1      
+        with:
+          check_filenames: true
