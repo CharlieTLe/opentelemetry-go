@@ -12,5 +12,5 @@ jobs:
       - name: Codespell with annotations
         uses: codespell-project/actions-codespell@v1      
         with:
-          exclude_file: "./.git/*,go.mod,go.sum,./semconv/*"
-          skip: ot,fo,te,collison,consequentially
+          skip: "./.git/*,go.mod,go.sum,./semconv/*"
+          ignore_words_list:: ot,fo,te,collison,consequentially
