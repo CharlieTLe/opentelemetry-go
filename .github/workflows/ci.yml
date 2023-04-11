@@ -45,6 +45,11 @@ jobs:
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('./internal/tools/**') }}
       - name: Run linters
         run: make dependabot-check license-check lint vanity-import-check
+      - name: Codespell with annotations
+        uses: codespell-project/actions-codespell@v1      
+        with:
+          skip: "./.git/*,go.mod,go.sum,./semconv/*"
+          ignore_words_list: ot,fo,te,collison,consequentially
       - name: Build
         run: make build
       - name: Check clean repository
